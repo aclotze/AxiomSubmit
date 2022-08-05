@@ -29,7 +29,7 @@ void thread_function() {
 		cout << "Thread #" << thisThread << ", value " << sharedSum << "\n";
 		sharedSum++;
 		myMutex.unlock();
-		Sleep(1);
+		sleep(1);
 	}
 }
 
@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
 	}
 
 	cout << "Sleeping for 10 seconds...\n";
-	Sleep(10000);
+	sleep(10000);
 	myMutex.unlock();
 
 	for (int i = 0; i < numThreads; i++) {
