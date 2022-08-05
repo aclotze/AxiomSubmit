@@ -4,6 +4,7 @@
 # include <windows.h>
 #endif
 
+#include <chrono>
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -29,7 +30,7 @@ void thread_function() {
 		cout << "Thread #" << thisThread << ", value " << sharedSum << "\n";
 		sharedSum++;
 		myMutex.unlock();
-		sleep(1);
+		this_thread::sleep_for(chrono::milliseconds(1));
 	}
 }
 
@@ -80,7 +81,7 @@ int main(int argc, char** argv) {
 	}
 
 	cout << "Sleeping for 10 seconds...\n";
-	sleep(10000);
+	this_thread::sleep_for(chrono::milliseconds(10000));
 	myMutex.unlock();
 
 	for (int i = 0; i < numThreads; i++) {
