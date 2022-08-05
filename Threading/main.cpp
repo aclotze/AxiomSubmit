@@ -1,9 +1,3 @@
-#ifdef __unix__
-# include <unistd.h>
-#elif defined _WIN32
-# include <windows.h>
-#endif
-
 #include <chrono>
 #include <iostream>
 #include <thread>
